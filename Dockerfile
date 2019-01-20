@@ -33,6 +33,6 @@ RUN apt update && \
         -C /cmake \
         --strip-components=1
 
-FROM gcr.io/distroless/cc as base
+FROM gcr.io/distroless/cc:af71326844a672decdbd6779e3d25db49ce2609028204af160d3248f2a729fa4 as base
 COPY --from=builder /cmake /cmake
 ENTRYPOINT ["/cmake/bin/cmake"]
